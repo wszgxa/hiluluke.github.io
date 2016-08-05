@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>archive_a: 2016 | hilu&#39;s note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <link rel="alternate" href="/atom.xml" title="hilu&#39;s note" type="application/atom+xml">
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+  <script type="text/javascript">
+    // fix sidebar flashing
+    (function(){
+      if (localStorage.getItem('sidebarState') == 'true') {
+        document.body.className="sideShow"
+      }
+    })()
+  </script>
+  <div id="container">
+    <aside class="sidebar">
+  <div class="head-icon">
+  
+    <a href="/about">
+      <img src="/avatar.jpg">
+    </a>
+  
+  </div>
+  <div class="name">hiluluke</div>
+  <div class="desc">
+    <h4>我是一个粉刷匠</h4>  
+  </div>
+  <nav class="side-nav">
+    <div class="nav-item">
+      <a href="/archives">
+        <span>
+          25
+        </span>
+        <span>日志</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/categories">
+        <span>
+          7
+        </span>
+        <span>分类</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/tags">
+        <span>
+          22
+        </span>
+        <span>标签</span>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="social-wrap">
+    
+    <a href="https://github.com/wszgxa" target="_blank">
+      <div class="item">
+        <i class="i-github"></i>
+      </div>
+    </a>
+    
+    <a href="http://v2ex.com/member/hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-v2ex"></i>
+      </div>
+    </a>
+    
+    <a href="https://www.zhihu.com/people/zhao-guo-xu" target="_blank">
+      <div class="item">
+        <i class="i-zhihu"></i>
+      </div>
+    </a>
+    
+    <a href="https://twitter.com/Hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-twitter"></i>
+      </div>
+    </a>
+    
+    <a href="http://codepen.io/hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-codepen"></i>
+      </div>
+    </a>
+    
+  </div>
+  
+</aside>
+    <div class="wrap">
+      <header class="header">
+  <div class="arrows" id="nav-btn"></div>
+</header>
+      <section id="main" class="content">
+        <section class="archives-wrap">
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2016/08/04/vue-spa/">
+          <h1>使用Vue快速开发单页应用-主体结构</h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Hilu Luke</a> on</span>
+        
+          <time datetime="2016-08-03T16:00:00.000Z" itemprop="datePublished">Aug 4 2016</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>单页应用，即在一个页面集成系统中所有功能，整个应用只有一个页面。因为路由的控制在前端，单页面应用在页面切换时比传统页面更快，从而在前端体验更好。</p>
+<p>将逻辑从后端转移到前端，提升了性能减少了页面加载时间，前后逻辑更扁平。但是当页面复杂度变高时，你会发现，数据处理，UI交互将变得难以维护，所以应运而生，出现了很多MV<em>框架和类库。Vue就是其中之一，个人觉得（非喜勿喷）Vue类库相对于其他MV</em>框架上整体的api更为简洁，提供的api很平衡，解决了问题的同时，没有增加复杂度。另外个人觉得vue在大型应用，开发中使用vue-loader将组件分成template,style,script结构更为清晰。</p>
+<p>本文以及后面相应文章，主要是vue相关技术栈来快速的实现单页应用开发。本文将以一个实际项目进行讲解，项目的github地址为：</p>
+<p><a href="https://github.com/wszgxa/vue-cnode">vue-cnode demo</a></p>
+<p>这是一个以<a href="cnodejs.org">cnodejs.org</a>提供的api来开发的单页，主要使用的modules有vue、vue-router、vuex、vue-resource。为了快速开发，我们还使用了vue-cli脚手架工具，下文会做介绍。<br>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2016/08/04/vue-spa/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2016/05/05/BFC-note/">
+          <h1>BFC note</h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Hilu Luke</a> on</span>
+        
+          <time datetime="2016-05-04T16:00:00.000Z" itemprop="datePublished">May 5 2016</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>前几天和别人交流的时候，让实现这么一个布局：</p>
+<p><img src="http://7fvhwe.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-05%20%E4%B8%8B%E5%8D%882.53.39.png" alt="双栏图片布局"></p>
+<p>大概就是上面这个样子。左边是一个图片，右边是文字区域。然后我给的大概实现方式是，左边图片高度宽度固定左浮动，然后右边div框起来左外边距等于图片宽度。</p>
+<p>然后这个大兄弟马上说，图片高度宽度不知。我想了想，想起来了overflow:auto可以实现，就这样说了。大兄弟马上问我为啥，我懵逼了。</p>
+<p>大兄弟一脸高深的告诉我：知道BFC不？(大兄弟人还是挺好的)</p>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2016/05/05/BFC-note/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2016/04/11/zepto_learn_function/">
+          <h1>zepto源码学习 <small>插件方法</small></h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Hilu Luke</a> on</span>
+        
+          <time datetime="2016-04-10T16:00:00.000Z" itemprop="datePublished">Apr 11 2016</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <h2 id="extend"><a href="#extend" class="headerlink" title="$.extend"></a>$.extend</h2><ul>
+<li><p>用途<br>扩展对象属性。<br>第一个参数如果是true就递归的将source给target。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$.extend(target, [source, [source2, ...]])  ⇒ target</div><div class="line">$.extend(<span class="literal">true</span>, target, [source, ...])  ⇒ target v1<span class="number">.0</span>+</div></pre></td></tr></table></figure>
+</li>
+<li><p>相关代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">target, source, deep</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (key <span class="keyword">in</span> source)</div><div class="line">    <span class="keyword">if</span> (deep &amp;&amp; (isPlainObject(source[key]) || isArray(source[key]))) &#123;</div><div class="line">      <span class="keyword">if</span> (isPlainObject(source[key]) &amp;&amp; !isPlainObject(target[key]))</div><div class="line">        target[key] = &#123;&#125;</div><div class="line">      <span class="keyword">if</span> (isArray(source[key]) &amp;&amp; !isArray(target[key]))</div><div class="line">        target[key] = []</div><div class="line">      extend(target[key], source[key], deep)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (source[key] !== <span class="literal">undefined</span>) target[key] = source[key]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Copy all but undefined properties from one or more</span></div><div class="line"><span class="comment">// objects to the `target` object.</span></div><div class="line">$.extend = <span class="function"><span class="keyword">function</span>(<span class="params">target</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> deep, args = slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>)</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> target == <span class="string">'boolean'</span>) &#123;</div><div class="line">    deep = target</div><div class="line">    target = args.shift()</div><div class="line">  &#125;</div><div class="line">  args.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">arg</span>)</span>&#123; extend(target, arg, deep) &#125;)</div><div class="line">  <span class="keyword">return</span> target</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2016/04/11/zepto_learn_function/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2016/04/09/zepto_learn_chain/">
+          <h1>zepto源码学习 <small>对象关系</small></h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Hilu Luke</a> on</span>
+        
+          <time datetime="2016-04-08T16:00:00.000Z" itemprop="datePublished">Apr 9 2016</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>今年重新找工作的时候面试官问了个问题，jQuery的链式函数调用的原理。当时一脸懵逼，因为完全没有去了解过。（事实证明面试能够很好的提高自己）</p>
+<p>然后感觉直接去看jq的源码，要仔细看好感觉得花很长时间，还是先看看zepto,反正组织代码的原理都差不多。</p>
+<h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p>在立即调用函数中声明了3个东东：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">zepto = &#123;&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Z</span>(<span class="params">dom, selector</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> i, len = dom ? dom.length : <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) <span class="keyword">this</span>[i] = dom[i]</div><div class="line">  <span class="keyword">this</span>.length = len</div><div class="line">  <span class="keyword">this</span>.selector = selector || <span class="string">''</span></div><div class="line">&#125;</div><div class="line">$ = <span class="function"><span class="keyword">function</span>(<span class="params">selector, context</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> zepto.init(selector, context)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然声明的位置各有不同，Z函数很显然是构造函数，zepto是构造中间的一些方法的保留吧，然后$上挂上所有对外的方法。构造调用的基本流程是，$调用zepto的init，然后init函数做一些处理，再返回一个Z的｀return zepto.Z(dom, selector)｀,其中zepto.Z返回的就是一个构造函数Z。这样做的处理是要在$上吧zepto挂上，可以在插件里面改写。<br>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2016/04/09/zepto_learn_chain/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2016/04/08/toString/">
+          <h1>toString方法的仔细了解</h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Hilu Luke</a> on</span>
+        
+          <time datetime="2016-04-07T16:00:00.000Z" itemprop="datePublished">Apr 8 2016</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <h2 id="因子"><a href="#因子" class="headerlink" title="因子"></a>因子</h2><p>在看Zepto源码的时候发现它做类型判断的时候用的下面的方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;&#125;,</div><div class="line">    toString = a.toString;</div><div class="line"></div><div class="line">toString.call(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;); <span class="comment">// [object Function]</span></div><div class="line">toString.call(&#123;&#125;); <span class="comment">// [object Object]</span></div><div class="line">toString.call(<span class="number">123</span>); <span class="comment">// [object Number]</span></div><div class="line">toString.call(<span class="string">"sasa"</span>); <span class="comment">// [object String]</span></div></pre></td></tr></table></figure></p>
+<p>上面这个判断类型的方法好像在js高程中好像看见过，不过忘了。然后让我对toString这个方法产生了好奇心，于是去多了解了下。<br>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2016/04/08/toString/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+  
+    <nav id="page-nav" class="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="extend next" rel="next" href="/archives/2016/page/2/"><i class='i-right'></i></a>
+    </nav>
+  
+</section>
+      </section>
+    </div>
+    <footer style="text-aligin:center">
+  啦啦啦，主题搭建中。。。
+</footer>
+  </div>
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

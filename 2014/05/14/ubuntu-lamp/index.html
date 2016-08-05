@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Ubuntu14.04上搭建lamp环境并修改www目录 | hilu&#39;s note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <link rel="alternate" href="/atom.xml" title="hilu&#39;s note" type="application/atom+xml">
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+  <script type="text/javascript">
+    // fix sidebar flashing
+    (function(){
+      if (localStorage.getItem('sidebarState') == 'true') {
+        document.body.className="sideShow"
+      }
+    })()
+  </script>
+  <div id="container">
+    <aside class="sidebar">
+  <div class="head-icon">
+  
+    <a href="/about">
+      <img src="/avatar.jpg">
+    </a>
+  
+  </div>
+  <div class="name">hiluluke</div>
+  <div class="desc">
+    <h4>我是一个粉刷匠</h4>  
+  </div>
+  <nav class="side-nav">
+    <div class="nav-item">
+      <a href="/archives">
+        <span>
+          25
+        </span>
+        <span>日志</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/categories">
+        <span>
+          7
+        </span>
+        <span>分类</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/tags">
+        <span>
+          22
+        </span>
+        <span>标签</span>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="social-wrap">
+    
+    <a href="https://github.com/wszgxa" target="_blank">
+      <div class="item">
+        <i class="i-github"></i>
+      </div>
+    </a>
+    
+    <a href="http://v2ex.com/member/hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-v2ex"></i>
+      </div>
+    </a>
+    
+    <a href="https://www.zhihu.com/people/zhao-guo-xu" target="_blank">
+      <div class="item">
+        <i class="i-zhihu"></i>
+      </div>
+    </a>
+    
+    <a href="https://twitter.com/Hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-twitter"></i>
+      </div>
+    </a>
+    
+    <a href="http://codepen.io/hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-codepen"></i>
+      </div>
+    </a>
+    
+  </div>
+  
+</aside>
+    <div class="wrap">
+      <header class="header">
+  <div class="arrows" id="nav-btn"></div>
+</header>
+      <section id="main" class="content">
+        <section class="archives-wrap">
+  <div class="archives">
+    <div class="title-wrap">
+      <h1>Ubuntu14.04上搭建lamp环境并修改www目录</h1>
+      <div class="page-info">
+      
+        <span>By <a href="/about">Hilu Luke</a> on</span>
+      
+        <time datetime="2014-05-13T16:00:00.000Z" itemprop="datePublished">May 14 2014</time>
+      </div>
+    </div>
+    <div class="content-wrap">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前几天换了个系统ubuntu14.04。我也推荐下，很好用。没游戏很适合学生用。哈哈哈</p>
+<p>接着步入正题吧。</p>
+<p>首先搭建lamp系统有很多种方法，我这是通过终端下载软件库一步一步搭建并配置一些基本的东西。这样来呢。是免得麻烦，相应的php，apache，mysql版本也还够新。</p>
+<p>这是我14年5月10号安装是各个软件的版本：</p>
+<a id="more"></a>
+<p>apache:Apache/2.4.7 (Ubuntu)</p>
+<p>php:5.5.9-1ubuntu4</p>
+<p>mysql:5.5.37</p>
+<p>可以看出ubuntu的库还是比较新的。对了，我的软件源是网易的。如果不晓得软件源怎么更换请自行百度。</p>
+<h2 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install apache2</div></pre></td></tr></table></figure>
+<p>apache默认是对外全部开放的，如果只是自己做开发用，为了安全着想，应该修改apache对外服务的端口:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gedit /etc/apache2/ports.conf</div></pre></td></tr></table></figure>
+<p>将下面的<br>Listen 80<br>改成<br>Listen 127.0.0.1:80<br>然后保存.<br>测试:<br><a href="http://localhost" target="_blank" rel="external">http://localhost</a> or <a href="http://127.0.0.1" target="_blank" rel="external">http://127.0.0.1</a><br>显示Apache2 Ubuntu Default Page则说明安装成功。</p>
+<h2 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install php5</div></pre></td></tr></table></figure>
+<p>安装php与apache协同工作模块<br>sudo apt-get install libapache-mod-php5<br>其实这一步可以不做，因为安装php5的时候已经自动安装这个模块。</p>
+<p>测试:<br>重启Apache</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo /etc/init.d/apache2 restart</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gedit /var/www/html/test.php</div></pre></td></tr></table></figure>
+<p>(这里有些人的地址是/var/www)输入</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>保存，在浏览器输入</p>
+<p><a href="http://localhost/test.php" target="_blank" rel="external">http://localhost/test.php</a></p>
+<p>显示php信息说明安装成功</p>
+<p>*目录/var/www/html是安装apache后自动生成的，apache提供服务的根目录。（后面有如何改根目录的内容）</p>
+<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install mysql-server</div></pre></td></tr></table></figure>
+<p>安装过程要输入mysql密码<br>安装mysql之后默认只有本机可以访问，如果需要开放给其他机器或者internet，需修改mysql配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gedit /etc/mysql/my.cnf</div></pre></td></tr></table></figure>
+<p>重启mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo /edt/init.d/mysql restart</div></pre></td></tr></table></figure>
+<h3 id="安装mysql与apache协同工作模块"><a href="#安装mysql与apache协同工作模块" class="headerlink" title="安装mysql与apache协同工作模块"></a>安装mysql与apache协同工作模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install libapache2-mod-auth-mysql</div></pre></td></tr></table></figure>
+<h3 id="安装mysql与php协同工作模块"><a href="#安装mysql与php协同工作模块" class="headerlink" title="安装mysql与php协同工作模块"></a>安装mysql与php协同工作模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install php5-mysql</div></pre></td></tr></table></figure>
+<p>测试mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo gedit /var/www/mysql_test.php</div></pre></td></tr></table></figure>
+<p>你可以在这里直接测试mysql是否安装上。用以下代码(或则安装phpmyadmin的时候再测试)：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$link = mysql_connect(“localhost”, “root”, “your password”);</div><div class="line"><span class="keyword">if</span> (!$link) &#123;</div><div class="line"><span class="keyword">die</span>(‘Can not connect to mysql’ . mysql_error());</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line"><span class="keyword">echo</span> ‘Mysql done’;</div><div class="line">&#125;</div><div class="line">mysql_close($link);</div><div class="line"><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="安装phpmyadmin"><a href="#安装phpmyadmin" class="headerlink" title="安装phpmyadmin"></a>安装phpmyadmin</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install phpmyadmin</div></pre></td></tr></table></figure>
+<p>安装过程选择服务器，选择apache，期间还要输入phpmyadmin密码，还有要输入mysql密码<br>建议phpmyadmin运行目录到apache网站服务根目录的软连接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ln <span class="_">-s</span> /usr/share/phpmyadmin /var/www/html(有的为var/www)</div></pre></td></tr></table></figure></p>
+<p>测试<br><a href="http://localhost/phpmyadmin" target="_blank" rel="external">http://localhost/phpmyadmin</a><br>用户名:phpmyadmin<br>密码:安装过程中输入的密码</p>
+<h2 id="修改文件根目录"><a href="#修改文件根目录" class="headerlink" title="修改文件根目录"></a>修改文件根目录</h2><p>网上有很多种…其实都是同一种。需要修改两个东西。<br>一个是下面的红色字体改为你认定的目录。我这就是/home/hiluluke/www</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Directory /home/hiluluke/www&gt;</div><div class="line">Options Indexes FollowSymLinks</div><div class="line">AllowOverride None</div><div class="line">Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
+<p>然后是将下面DocumentRoot也改为上面一样的目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DocumentRoot /home/hiluluke/www</div></pre></td></tr></table></figure>
+<p>为啥要这样讲呢。。。因为这两个东西可能不在一个配置文件中。<br>但是一般都在两个文件中，一个是000-default.conf<br>一个是apache2.conf<br>这两个文件一般都在/etc/apache2中。用搜索就能找到。</p>
+
+    </div>
+  </div>
+</section>
+      </section>
+    </div>
+    <footer style="text-aligin:center">
+  啦啦啦，主题搭建中。。。
+</footer>
+  </div>
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
