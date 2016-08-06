@@ -37,7 +37,7 @@
     <div class="nav-item">
       <a href="/archives">
         <span>
-          25
+          26
         </span>
         <span>日志</span>
       </a>
@@ -101,6 +101,32 @@
 </header>
       <section id="main" class="content">
         <section class="archives-wrap">
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2015/09/03/fanyi-fourBoxs/">
+          <h1>如何创建一个平铺背景滑动效果【日常翻译五】</h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Hilu Luke</a> on</span>
+        
+          <time datetime="2015-09-02T16:00:00.000Z" itemprop="datePublished">Sep 3 2015</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>今天我们将看看如何实现像<a href="http://www.atelier-serge-thoraval.com/fr/">Serge Thoroval’s Atelier</a>中的全屏背景滑动特效。<br><a href="http://tympanus.net/codrops/2015/03/04/playful-trampoline-effect/">demo和原来译文</a></p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>为了达到这个滚动效果，我们需要一个能让我们构造4个不同“瓷砖”效果的特别标签结构，它们将使用同一张图片的不同部分。因为我们这是一个全屏滚动效果，所以我们需要确保让所有元素都延伸至全屏。为了使得我们能制定那个图片被可见，我们需要定义一个简单的初始结构并构建我们“瓷砖”的重复结构。初始结构就像这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"boxgallery"</span> <span class="attr">class</span>=<span class="string">"boxgallery"</span> <span class="attr">data-effect</span>=<span class="string">"effect-1"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.jpg"</span> <span class="attr">alt</span>=<span class="string">"Image 1"</span>/&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/2.jpg"</span> <span class="attr">alt</span>=<span class="string">"Image 2"</span>/&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/3.jpg"</span> <span class="attr">alt</span>=<span class="string">"Image 3"</span>/&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/4.jpg"</span> <span class="attr">alt</span>=<span class="string">"Image 4"</span>/&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>为了去将一张图片分成4个小瓷砖，我们为每个面板构建如下的重复结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"boxgallery"</span> <span class="attr">class</span>=<span class="string">"boxgallery"</span> <span class="attr">data-effect</span>=<span class="string">"effect-1"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel current"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-tile"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-tile"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-tile"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-tile"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-tile"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/2.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-tile"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/2.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-tile"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/2.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-tile"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/2.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- ... --&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- ... --&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">nav</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"prev"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"next"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2015/09/03/fanyi-fourBoxs/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
   
     <div class="archives">
       <div class="title-wrap">
@@ -198,35 +224,9 @@
       </div>
     </div>
   
-    <div class="archives">
-      <div class="title-wrap">
-        <a class="post-title" href="/2015/02/21/jsselfdo/">
-          <h1>自执行匿名函数及其与闭包的关系</h1>
-        </a>
-        <div class="page-info">
-        
-          <span>By <a href="/about">Hilu Luke</a> on</span>
-        
-          <time datetime="2015-02-21T14:54:11.000Z" itemprop="datePublished">Feb 21 2015</time>
-        </div>
-      </div>
-      <div class="content-wrap">
-        
-          <p>对这个感兴趣是因为看<a href="http://bonsaiden.github.io/JavaScript-Garden/zh/">javascript 秘密花园</a>看到闭包部分，讲到匿名包装器（自执行匿名函数）时产生了好奇，虽然之前也有接触，但是只是知道这么个东西。今天查了些资料，现在总结下，权当笔记。</p>
-<h2 id="函数的三种定义方式"><a href="#函数的三种定义方式" class="headerlink" title="函数的三种定义方式"></a>函数的三种定义方式</h2><ul>
-<li>第一种</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addNum</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x+y;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-      </div>
-      <div class='read-more'>
-        <a href="/2015/02/21/jsselfdo/"><span class='i-next'>阅读全文</span></a>
-      </div>
-    </div>
-  
   
     <nav id="page-nav" class="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/"><i class='i-left'></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/5/"><i class='i-right'></i></a>
+      <a class="extend prev" rel="prev" href="/archives/page/3/"><i class='i-left'></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/5/"><i class='i-right'></i></a>
     </nav>
   
 </section>

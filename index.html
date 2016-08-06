@@ -37,7 +37,7 @@
     <div class="nav-item">
       <a href="/archives">
         <span>
-          25
+          26
         </span>
         <span>日志</span>
       </a>
@@ -104,8 +104,72 @@
   
     <div class="archives">
       <div class="title-wrap">
+        <a class="post-title" href="/2016/08/05/vue-router/">
+          <h1>使用Vue快速开发单页应用|vue-router</h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">Hilu Luke</a> on</span>
+        
+          <time datetime="2016-08-04T16:00:00.000Z" itemprop="datePublished">Aug 5 2016</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <blockquote>
+<p>本文所涉及代码全在<a href="https://github.com/wszgxa/vue-cnode" target="_blank" rel="external">vue-cnode</a></p>
+</blockquote>
+<p>vue-router主要作用是将路由控制，转移到前端。我们将会在vue-router里面保存一个路由表，在vue中具体通过调用提供的指令或则方法进行跳转。</p>
+<p>其实吧，vue-router说白了就是一个插件，对外暴露的也就是指令和方法。如果只要求灵活用起来，我们需要学习的也就3个地方：</p>
+<ul>
+<li>配置路由</li>
+<li>指令</li>
+<li>方法</li>
+</ul>
+<h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><p>路由配置其实是分两步的，第一步把vue-router的指令方法挂到Vue实例，第二步才是添加路由配置上。下面是基本的路由配置：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'App.vue'</span></div><div class="line">Vue.use(VueRouter) <span class="comment">// 第一步</span></div><div class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  history: <span class="literal">true</span>,</div><div class="line">  saveScrollPosition: <span class="literal">true</span></div><div class="line">&#125;) <span class="comment">// 第二步</span></div><div class="line">router.map(&#123;</div><div class="line">    <span class="string">'/'</span>: &#123;</div><div class="line">      name: <span class="string">'index'</span>,</div><div class="line">      title: <span class="string">'全部'</span>,</div><div class="line">      component: (resolve) =&gt; <span class="built_in">require</span>([<span class="string">'./components/main/index.vue'</span>], resolve)</div><div class="line">    &#125;,</div><div class="line">    <span class="string">'/good'</span>: &#123;</div><div class="line">      name: <span class="string">'good'</span>,</div><div class="line">      title: <span class="string">'精华'</span>,</div><div class="line">      component: (resolve) =&gt; <span class="built_in">require</span>([<span class="string">'./components/main/index.vue'</span>], resolve)</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">router.start(App, <span class="string">'#app'</span>)</div></pre></td></tr></table></figure></p>
+<p>这里大家可以去看看源码，源码很简洁。主要就是声明了一个Router的对象，Router上面插件要的install方法，然后还有start方法。</p>
+<p>源码片段<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Router</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span> (&#123;</div><div class="line">    hashbang = <span class="literal">true</span>,</div><div class="line">    abstract = <span class="literal">false</span>,</div><div class="line">    history = <span class="literal">false</span>,</div><div class="line">    saveScrollPosition = <span class="literal">false</span>,</div><div class="line">    transitionOnLoad = <span class="literal">false</span>,</div><div class="line">    suppressTransitionError = <span class="literal">false</span>,</div><div class="line">    root = <span class="literal">null</span>,</div><div class="line">    linkActiveClass = <span class="string">'v-link-active'</span></div><div class="line">  &#125; = &#123;&#125;) &#123;</div><div class="line">    ....</div><div class="line">  &#125;</div><div class="line">Router.install = <span class="function"><span class="keyword">function</span> (<span class="params">externalVue</span>) </span>&#123;</div><div class="line">  ....</div><div class="line">  Vue = externalVue</div><div class="line">  applyOverride(Vue)</div><div class="line">  View(Vue)</div><div class="line">  Link(Vue)</div><div class="line">  util.Vue = Vue</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>源码中在Router一共有9个方法：</p>
+<ul>
+<li>map</li>
+<li>on</li>
+<li>redirect</li>
+<li>alias</li>
+<li>beforeEach</li>
+<li>afterEach</li>
+<li>go</li>
+<li>replace</li>
+<li>start</li>
+<li>stop</li>
+</ul>
+<p>其中start是初始化组件的，</p>
+<p>其中涉及路由前期配置的是：map, redirect，alias，beforeEach，afterEach，start。go和replace两个方法都是路由跳转的。</p>
+<p>map，redirect，alias这3个方法是基础的配置方法，很简单，就请看<a href="http://router.vuejs.org/zh-cn/index.html" target="_blank" rel="external">文档</a>吧。</p>
+<p>这里主要讲下beforeEach和afterEach，就和方法名一样他们分别是在路由跳转前后做的一些事情。</p>
+<p>在vue-router有一个路由声明周期的概念，这里不展开来讲，你只需要知道我们berforeEach和afterEach后面接的函数是一个钩子函数，钩子函数接受的第一个参数是一个transition对象,transition对象有以下方法，主要是用来控制路由跳转的。</p>
+<ul>
+<li>transition.to 一个我们将要跳转去的路由的对象，这个对象可能有path,name等属性。</li>
+<li>transition.from 当前路由对象</li>
+<li>transition.next() 调用此函数处理切换过程的下一步</li>
+<li>transition.abort([reason]) 终止切换</li>
+<li>transition.redirect(path) 重定向到另一个路由</li>
+</ul>
+<p>afterEach由于是路由切换后，只有上面的to,from两个属性。</p>
+<p>为什么要单独讲beforEach和afterEach，因为我们可以在里面做很多全局的东西。比如登陆跳转、文章切换title、特定页面设置属性、调用vuex的方法等。这里我们讲一个刷新title的例子。后续还会有一个全局控制的文章，再补充些其他例子。</p>
+<p>单页应用由于只有一次</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">router.map(&#123;</div><div class="line">    <span class="string">'/'</span>: &#123;</div><div class="line">      name: <span class="string">'index'</span>,</div><div class="line">      title: <span class="string">'全部'</span>,</div><div class="line">      component: (resolve) =&gt; <span class="built_in">require</span>([<span class="string">'./components/main/index.vue'</span>], resolve)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// document title change</span></div><div class="line">  router.afterEach((transition) =&gt; &#123;</div><div class="line">    <span class="built_in">document</span>.title = transition.to.title || <span class="string">'CNode.js'</span></div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2016/08/05/vue-router/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
         <a class="post-title" href="/2016/08/04/vue-spa/">
-          <h1>使用Vue快速开发单页应用-主体结构</h1>
+          <h1>使用Vue快速开发单页应用|主体结构</h1>
         </a>
         <div class="page-info">
         
@@ -116,7 +180,10 @@
       </div>
       <div class="content-wrap">
         
-          <p>单页应用，即在一个页面集成系统中所有功能，整个应用只有一个页面。因为路由的控制在前端，单页面应用在页面切换时比传统页面更快，从而在前端体验更好。</p>
+          <blockquote>
+<p>本文所涉及代码全在<a href="https://github.com/wszgxa/vue-cnode">vue-cnode</a></p>
+</blockquote>
+<p>单页应用，即在一个页面集成系统中所有功能，整个应用只有一个页面。因为路由的控制在前端，单页面应用在页面切换时比传统页面更快，从而在前端体验更好。</p>
 <p>将逻辑从后端转移到前端，提升了性能减少了页面加载时间，前后逻辑更扁平。但是当页面复杂度变高时，你会发现，数据处理，UI交互将变得难以维护，所以应运而生，出现了很多MV<em>框架和类库。Vue就是其中之一，个人觉得（非喜勿喷）Vue类库相对于其他MV</em>框架上整体的api更为简洁，提供的api很平衡，解决了问题的同时，没有增加复杂度。另外个人觉得vue在大型应用，开发中使用vue-loader将组件分成template,style,script结构更为清晰。</p>
 <p>本文以及后面相应文章，主要是vue相关技术栈来快速的实现单页应用开发。本文将以一个实际项目进行讲解，项目的github地址为：</p>
 <p><a href="https://github.com/wszgxa/vue-cnode">vue-cnode demo</a></p>
@@ -208,32 +275,9 @@
       </div>
     </div>
   
-    <div class="archives">
-      <div class="title-wrap">
-        <a class="post-title" href="/2016/04/08/toString/">
-          <h1>toString方法的仔细了解</h1>
-        </a>
-        <div class="page-info">
-        
-          <span>By <a href="/about">Hilu Luke</a> on</span>
-        
-          <time datetime="2016-04-07T16:00:00.000Z" itemprop="datePublished">Apr 8 2016</time>
-        </div>
-      </div>
-      <div class="content-wrap">
-        
-          <h2 id="因子"><a href="#因子" class="headerlink" title="因子"></a>因子</h2><p>在看Zepto源码的时候发现它做类型判断的时候用的下面的方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;&#125;,</div><div class="line">    toString = a.toString;</div><div class="line"></div><div class="line">toString.call(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;); <span class="comment">// [object Function]</span></div><div class="line">toString.call(&#123;&#125;); <span class="comment">// [object Object]</span></div><div class="line">toString.call(<span class="number">123</span>); <span class="comment">// [object Number]</span></div><div class="line">toString.call(<span class="string">"sasa"</span>); <span class="comment">// [object String]</span></div></pre></td></tr></table></figure></p>
-<p>上面这个判断类型的方法好像在js高程中好像看见过，不过忘了。然后让我对toString这个方法产生了好奇心，于是去多了解了下。<br>
-        
-      </div>
-      <div class='read-more'>
-        <a href="/2016/04/08/toString/"><span class='i-next'>阅读全文</span></a>
-      </div>
-    </div>
-  
   
     <nav id="page-nav" class="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class='i-right'></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class='i-right'></i></a>
     </nav>
   
 </section>
