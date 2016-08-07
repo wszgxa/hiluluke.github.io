@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hiluluke.cn/"/>
-  <updated>2016-08-06T14:08:18.000Z</updated>
+  <updated>2016-08-07T08:03:01.000Z</updated>
   <id>http://hiluluke.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://hiluluke.cn/2016/08/05/vue-router/"/>
     <id>http://hiluluke.cn/2016/08/05/vue-router/</id>
     <published>2016-08-04T16:00:00.000Z</published>
-    <updated>2016-08-06T14:08:18.000Z</updated>
+    <updated>2016-08-07T08:03:01.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>本文所涉及代码全在<a href="https://github.com/wszgxa/vue-cnode" target="_blank" rel="external">vue-cnode</a></p>
@@ -62,8 +62,14 @@
 </ul>
 <p>afterEach由于是路由切换后，只有上面的to,from两个属性。</p>
 <p>为什么要单独讲beforEach和afterEach，因为我们可以在里面做很多全局的东西。比如登陆跳转、文章切换title、特定页面设置属性、调用vuex的方法等。这里我们讲一个刷新title的例子。后续还会有一个全局控制的文章，再补充些其他例子。</p>
-<p>单页应用由于只有一次</p>
+<p>单页应用从始至终都只有会请求一个html，也就需要动态的改变，document title, 我们完全可以将修改title这个过程提到全局，在afterEach里面做，如下所示：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">router.map(&#123;</div><div class="line">    <span class="string">'/'</span>: &#123;</div><div class="line">      name: <span class="string">'index'</span>,</div><div class="line">      title: <span class="string">'全部'</span>,</div><div class="line">      component: (resolve) =&gt; <span class="built_in">require</span>([<span class="string">'./components/main/index.vue'</span>], resolve)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// document title change</span></div><div class="line">  router.afterEach((transition) =&gt; &#123;</div><div class="line">    <span class="built_in">document</span>.title = transition.to.title || <span class="string">'CNode.js'</span></div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<p>在ios下面上述方法还不行，因为ios上有一个bug，不会再修改document.title时更新浏览器上面的title。因为这里并不是真正刷新页面，所以ios下不会调用浏览器更新title的事件吧。</p>
+<p>可以用一个iframe的hack<a href="https://gist.github.com/wszgxa/48eefb02650ea011ab28a116643890a9" target="_blank" rel="external">方法</a></p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>vue-router 提供的指令就一个：<code>v-link</code>。</p>
+<p>他的作用就是跳转路由。具体用法如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 字面量路径 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-link</span>=<span class="string">"'home'"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 效果同上 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-link</span>=<span class="string">"&#123; path: 'home' &#125;"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 具名路径 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-link</span>=<span class="string">"&#123; name: 'user', params: &#123; userId: 123 &#125;&#125;"</span>&gt;</span>User<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>详细的用法建议看<a href="http://router.vuejs.org/zh-cn/link.html" target="_blank" rel="external">文档</a></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>vue在use vue-router之后就会添加一个$route的属性。里面有很多属性，主要的就是router下面的方法。<br>我们用的较多的是router.go,还有就是router.on。<br>这里还是建议看<a href="http://router.vuejs.org/zh-cn/api/go.html" target="_blank" rel="external">文档</a>，比我搬过来要详细的多。</p>
 ]]></content>
     
     <summary type="html">
