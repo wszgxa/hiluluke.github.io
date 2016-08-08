@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://hiluluke.cn/2016/08/05/vue-router/</loc>
+    <loc>http://hiluluke.cn/2016/08/04/vue-spa/</loc>
     
-    <lastmod>2016-08-07T08:03:01.000Z</lastmod>
+    <lastmod>2016-08-08T12:48:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2016/08/04/vue-spa/</loc>
+    <loc>http://hiluluke.cn/2016/08/05/vue-router/</loc>
     
-    <lastmod>2016-08-05T09:40:29.000Z</lastmod>
+    <lastmod>2016-08-07T08:03:01.000Z</lastmod>
     
   </url>
   
@@ -86,48 +86,6 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/10/14/js-inherit/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2014/05/17/gvim-guide/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/10/10/js-object/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/10/25/canvasNote1/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/09/10/fanyi-trampoline/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://hiluluke.cn/2015/02/21/jsselfdo/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
@@ -135,35 +93,7 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/09/03/fanyi-fourBoxs/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2014/04/28/sublime/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/08/04/fanyi-using-svg/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2014/05/14/ubuntu-lamp/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/08/19/fanyi-usePseudo/</loc>
+    <loc>http://hiluluke.cn/2015/10/25/canvasNote1/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
@@ -184,7 +114,77 @@
   </url>
   
   <url>
+    <loc>http://hiluluke.cn/2015/10/10/js-object/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2014/05/14/ubuntu-lamp/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2014/04/28/sublime/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/09/10/fanyi-trampoline/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/08/19/fanyi-usePseudo/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/08/04/fanyi-using-svg/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/09/03/fanyi-fourBoxs/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hiluluke.cn/2014/01/28/hello-hexo/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/14/js-inherit/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2014/05/17/gvim-guide/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
