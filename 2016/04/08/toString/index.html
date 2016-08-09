@@ -96,11 +96,15 @@
   
 </aside>
     <div class="wrap">
+      <div class="side">
+  <div class="arrows" id="nav-btn"></div>
+</div>
       <header class="header">
   <div class="arrows" id="nav-btn"></div>
 </header>
       <section id="main" class="content">
-        <section class="archives-wrap">
+        
+<section class="archives-wrap">
   <div class="archives">
     <div class="title-wrap">
       <h1>toString方法的仔细了解</h1>
@@ -161,18 +165,19 @@
 </tbody>
 </table>
 <h2 id="call改变引用对象后是咋样？"><a href="#call改变引用对象后是咋样？" class="headerlink" title="call改变引用对象后是咋样？"></a>call改变引用对象后是咋样？</h2><p>那对于其他的toString在通过call和apply改变this之后会是怎样呢？<br>我发现有些类型是这样的:</p>
-<p>!()[<a href="http://7fvhwe.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-08%20%E4%B8%8B%E5%8D%885.48.19.png" target="_blank" rel="external">http://7fvhwe.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-08%20%E4%B8%8B%E5%8D%885.48.19.png</a>]</p>
+<p><img src="http://7fvhwe.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-04-08%20%E4%B8%8B%E5%8D%885.48.19.png" alt=""></p>
 <p>而有些类型像对象的一样返回[object xxxxx]</p>
 <p>我试了试是不是引用类型和基本类型的区分。。。发现不是。不区分完了。还有其他事。</p>
 
     </div>
   </div>
 </section>
+
       </section>
-    </div>
     <footer style="text-align:center">
   啦啦啦，主题搭建中。。。
 </footer>
+    </div>
   </div>
   <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
   <script src="/js/script.js"></script>

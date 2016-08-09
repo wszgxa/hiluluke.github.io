@@ -142,29 +142,62 @@ body {
   content: '\e603';
 }
 .wrap {
+  position: relative;
   transition: 300ms all ease-in-out;
 }
 .header {
+  display: none;
   padding-left: 10px;
   margin-top: 10px;
 }
 .header .arrows {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   border: 1px solid rgba(0,0,0,0);
-  line-height: 40px;
+  line-height: 25px;
   text-align: center;
   cursor: pointer;
   transition: 300ms all;
+  background-color: #e3e3e3;
 }
 .header .arrows:after {
   content: '\e602';
   font-family: iconfont;
-  font-size: 24px;
+  font-size: 14px;
   color: #7f7f7f;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 .header .arrows:hover:after {
+  color: #b71c1c;
+}
+.side {
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  transition: 300ms all;
+}
+.side .arrows {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0);
+  line-height: 25px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #e3e3e3;
+}
+.side .arrows:after {
+  content: '\e602';
+  font-family: iconfont;
+  font-size: 14px;
+  color: #7f7f7f;
+}
+.side .arrows:hover:after {
   color: #b71c1c;
 }
 .sideShow .arrows {
@@ -173,6 +206,13 @@ body {
   -moz-transform: rotate3d(0, 1, 0, 180deg);
   -ms-transform: rotate3d(0, 1, 0, 180deg);
   -o-transform: rotate3d(0, 1, 0, 180deg);
+}
+.sideShow .side {
+  transform: translate3d(210px, 0, 0);
+  -webkit-transform: translate3d(210px, 0, 0);
+  -moz-transform: translate3d(210px, 0, 0);
+  -ms-transform: translate3d(210px, 0, 0);
+  -o-transform: translate3d(210px, 0, 0);
 }
 .sideShow .wrap {
   padding-left: 210px;
@@ -190,6 +230,7 @@ body {
   left: 0;
   top: 0;
   bottom: 0;
+  z-index: 2;
   width: 210px;
   transform: translate3d(-210px, 0, 0);
   -webkit-transform: translate3d(-210px, 0, 0);
@@ -372,6 +413,10 @@ body {
   display: block;
   border: 1px solid #e0e0e0;
   max-width: 100%;
+}
+.archives .content-wrap a {
+  color: #093272;
+  text-decoration: underline;
 }
 .page-nav {
   margin: 40px 0;
