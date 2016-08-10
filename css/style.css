@@ -83,7 +83,7 @@ body {
   word-wrap: break-word;
   font-size: 1em;
   line-height: 1.5;
-  font-family: 'Roboto', Lato, 'Droid Sans', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", STHeiti, "WenQuanYi Micro Hei", SimSun, Helvetica, sans-serif;
   background: #fefefe;
   color: #323232;
 }
@@ -181,24 +181,38 @@ body {
   left: 30px;
   transition: 300ms all;
 }
+.side .top,
 .side .arrows {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 1px solid rgba(0,0,0,0);
-  line-height: 25px;
+  line-height: 30px;
   text-align: center;
   cursor: pointer;
-  background-color: #e3e3e3;
 }
+.side .top:after,
 .side .arrows:after {
   content: '\e602';
   font-family: iconfont;
-  font-size: 14px;
+  font-size: 16px;
   color: #7f7f7f;
 }
+.side .top:hover,
+.side .arrows:hover {
+  background-color: #e3e3e3;
+}
+.side .top:hover:after,
 .side .arrows:hover:after {
   color: #b71c1c;
+}
+.side .top {
+  margin-bottom: 10px;
+  transform: rotate3d(0, 0, 1, -90deg);
+  -webkit-transform: rotate3d(0, 0, 1, -90deg);
+  -moz-transform: rotate3d(0, 0, 1, -90deg);
+  -ms-transform: rotate3d(0, 0, 1, -90deg);
+  -o-transform: rotate3d(0, 0, 1, -90deg);
 }
 .sideShow .arrows {
   transform: rotate3d(0, 1, 0, 180deg);
