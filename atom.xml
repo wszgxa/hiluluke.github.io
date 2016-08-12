@@ -1265,13 +1265,13 @@
       <category term="HTML5" scheme="http://hiluluke.cn/categories/HTML5/"/>
     
     
-      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
-    
       <category term="HTML5" scheme="http://hiluluke.cn/tags/HTML5/"/>
     
-      <category term="前端" scheme="http://hiluluke.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
     
       <category term="设计" scheme="http://hiluluke.cn/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="前端" scheme="http://hiluluke.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -1357,13 +1357,13 @@
       <category term="HTML5" scheme="http://hiluluke.cn/categories/HTML5/"/>
     
     
-      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
-    
       <category term="HTML5" scheme="http://hiluluke.cn/tags/HTML5/"/>
     
-      <category term="前端" scheme="http://hiluluke.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
     
       <category term="设计" scheme="http://hiluluke.cn/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="前端" scheme="http://hiluluke.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -1443,9 +1443,9 @@
       <category term="HTML5" scheme="http://hiluluke.cn/categories/HTML5/"/>
     
     
-      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
-    
       <category term="HTML5" scheme="http://hiluluke.cn/tags/HTML5/"/>
+    
+      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
     
       <category term="CSS3" scheme="http://hiluluke.cn/tags/CSS3/"/>
     
@@ -1535,9 +1535,9 @@
     
       <category term="css" scheme="http://hiluluke.cn/tags/css/"/>
     
-      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
-    
       <category term="HTML5" scheme="http://hiluluke.cn/tags/HTML5/"/>
+    
+      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
@@ -1667,11 +1667,11 @@
       <category term="HTML5" scheme="http://hiluluke.cn/categories/HTML5/"/>
     
     
-      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
-    
       <category term="HTML5" scheme="http://hiluluke.cn/tags/HTML5/"/>
     
       <category term="SVG" scheme="http://hiluluke.cn/tags/SVG/"/>
+    
+      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
@@ -1785,7 +1785,7 @@
 <p>看起来不错吧？（原博主很喜欢这句话）</p>
 <p>如果你对使用SMIL（同步多媒体集成语言）版本的例子感兴趣，可以看看这个<a href="http://codepen.io/sol0mka/pen/0bf400db555f7c9701387b73d25c80a7" target="_blank" rel="external">例子</a>。注意到SMIL语言在有些浏览器是<a href="http://caniuse.com/#feat=svg-smil" target="_blank" rel="external">不兼容的</a>。</p>
 <h2 id="使用媒体查询"><a href="#使用媒体查询" class="headerlink" title="使用媒体查询"></a>使用媒体查询</h2><p>我们能够使用单独的css尤其是媒体查询在我们的icon图片中。意思就是我们有能力去改变其属性，比如我们能够高孔子icon的形状通过屏幕大小或则其他。比如我们将使用这样的内联样式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">   &lt;!<span class="selector-attr">[CDATA[     @media screen and (max-width:810px)&#123;      .hide&#123;        display: none;      &#125;    &#125;   ]</span>] &gt;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">   &lt;![CDATA[     @media screen and (max-width:810px)&#123;      .hide&#123;        display: none;      &#125;    &#125;   ]] &gt;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>尝试调整浏览器大小，查看下面这段代码在少于800像素是的呈现。</p>
 <p></p><p data-height="368" data-theme-id="17379" data-slug-hash="aOPbRb" data-default-tab="result" data-user="hiluluke" class="codepen">See the Pen <a href="http://codepen.io/hiluluke/pen/aOPbRb/" target="_blank" rel="external">aOPbRb</a> by hiluluke (<a href="http://codepen.io/hiluluke" target="_blank" rel="external">@hiluluke</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
@@ -1877,11 +1877,11 @@
       <category term="HTML5" scheme="http://hiluluke.cn/categories/HTML5/"/>
     
     
-      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
-    
       <category term="HTML5" scheme="http://hiluluke.cn/tags/HTML5/"/>
     
       <category term="SVG" scheme="http://hiluluke.cn/tags/SVG/"/>
+    
+      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
