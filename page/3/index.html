@@ -109,6 +109,7 @@
   <a href="/archives">日志</a>
   <a href="/categories">分类</a>
   <a href="/tags">标签</a>
+  <a href="/about">关于</a>
   <a href="/atom.xml">RSS</a>
 </header>
       <section id="main" class="content">
@@ -121,7 +122,7 @@
         </a>
         <div class="page-info">
         
-          <span>By <a href="/about">Hilu Luke</a> on</span>
+          <span>By <a href="/about">hiluluke</a> on</span>
         
           <time datetime="2015-10-19T16:00:00.000Z" itemprop="datePublished">Oct 20 2015</time>
         </div>
@@ -145,39 +146,12 @@
   
     <div class="archives">
       <div class="title-wrap">
-        <a class="post-title" href="/2015/10/14/js-inherit/">
-          <h1>javascript继承 </h1>
-        </a>
-        <div class="page-info">
-        
-          <span>By <a href="/about">Hilu Luke</a> on</span>
-        
-          <time datetime="2015-10-13T16:00:00.000Z" itemprop="datePublished">Oct 14 2015</time>
-        </div>
-      </div>
-      <div class="content-wrap">
-        
-          <blockquote>
-<p>本文主要是自己在阅读<a href="http://www.ituring.com.cn/book/946">javascript高级程序设计</a>之后所做的笔记。</p>
-</blockquote>
-<p>js的继承主要依靠原型链的方式实现，与一般的oo语言有些不一样。</p>
-<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>利用原型让一个引用类型继承另一个引用类型的属性和方法。让原型对象等于另一个类型的实例。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.property = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">SuperType.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.property;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">this</span>.subproperty = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//继承了 SuperType</span></div><div class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</div><div class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</div><div class="line">&#125;;  </div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType();</div><div class="line">alert(instance.getSuperValue());<span class="comment">//true</span></div></pre></td></tr></table></figure>
-        
-      </div>
-      <div class='read-more'>
-        <a href="/2015/10/14/js-inherit/"><span class='i-next'>阅读全文</span></a>
-      </div>
-    </div>
-  
-    <div class="archives">
-      <div class="title-wrap">
         <a class="post-title" href="/2015/10/14/gulp/">
           <h1>gulp note </h1>
         </a>
         <div class="page-info">
         
-          <span>By <a href="/about">Hilu Luke</a> on</span>
+          <span>By <a href="/about">hiluluke</a> on</span>
         
           <time datetime="2015-10-13T16:00:00.000Z" itemprop="datePublished">Oct 14 2015</time>
         </div>
@@ -218,12 +192,39 @@
   
     <div class="archives">
       <div class="title-wrap">
+        <a class="post-title" href="/2015/10/14/js-inherit/">
+          <h1>javascript继承 </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">hiluluke</a> on</span>
+        
+          <time datetime="2015-10-13T16:00:00.000Z" itemprop="datePublished">Oct 14 2015</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <blockquote>
+<p>本文主要是自己在阅读<a href="http://www.ituring.com.cn/book/946">javascript高级程序设计</a>之后所做的笔记。</p>
+</blockquote>
+<p>js的继承主要依靠原型链的方式实现，与一般的oo语言有些不一样。</p>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>利用原型让一个引用类型继承另一个引用类型的属性和方法。让原型对象等于另一个类型的实例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.property = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">SuperType.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.property;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">this</span>.subproperty = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//继承了 SuperType</span></div><div class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</div><div class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.subproperty;</div><div class="line">&#125;;  </div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType();</div><div class="line">alert(instance.getSuperValue());<span class="comment">//true</span></div></pre></td></tr></table></figure>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2015/10/14/js-inherit/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
         <a class="post-title" href="/2015/10/10/js-object/">
           <h1>javascript对象 </h1>
         </a>
         <div class="page-info">
         
-          <span>By <a href="/about">Hilu Luke</a> on</span>
+          <span>By <a href="/about">hiluluke</a> on</span>
         
           <time datetime="2015-10-09T16:00:00.000Z" itemprop="datePublished">Oct 10 2015</time>
         </div>
@@ -255,7 +256,7 @@
         </a>
         <div class="page-info">
         
-          <span>By <a href="/about">Hilu Luke</a> on</span>
+          <span>By <a href="/about">hiluluke</a> on</span>
         
           <time datetime="2015-09-09T16:00:00.000Z" itemprop="datePublished">Sep 10 2015</time>
         </div>
@@ -279,8 +280,9 @@
   
 </section>
       </section>
-    <footer style="text-align:center">
-  啦啦啦，主题搭建中。。。
+    <footer class="footer">
+  <div>我是一个粉刷匠</div>
+  <div>由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题- <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
 </footer>
     </div>
   </div>
