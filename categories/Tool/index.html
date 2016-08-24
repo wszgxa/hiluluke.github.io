@@ -1,1 +1,354 @@
-<!DOCTYPE html><html><head><title> 分类: Tool | hilu&#39;s note</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta charset="utf-8"><link rel="alternate" href="" title="hilu&#39;s note" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><style>.menu-home .menu-item-home{color:#b71c1c}.menu-categories .menu-item-categories{color:#b71c1c}.menu-tags .menu-item-tags{color:#b71c1c}.menu-about .menu-item-about{color:#b71c1c}.menu-rss .menu-item-rss{color:#b71c1c}</style><link rel="stylesheet" href="/css/style.css"></head><body><script type="text/javascript">!function(){"true"==localStorage.getItem("sidebarState")&&(document.body.className="sideShow")}()</script><div id="container"><aside class="sidebar"><div class="head-icon"> <a href="/about"><img src="/avatar.jpeg"></a></div><div class="name">hiluluke</div><div class="desc"><h4>我是一个粉刷匠</h4></div><nav class="side-nav"><div class="nav-item"> <a href="/"><span>28</span> <span>日志</span></a></div><div class="nav-item"> <a href="/categories"><span>7</span> <span>分类</span></a></div><div class="nav-item"> <a href="/tags"><span>22</span> <span>标签</span></a></div></nav><div class="social-wrap"><a href="https://github.com/wszgxa" target="_blank"><div class="item"><i class="i-github"></i></div></a><a href="http://v2ex.com/member/hiluluke" target="_blank"><div class="item"><i class="i-v2ex"></i></div></a><a href="https://www.zhihu.com/people/zhao-guo-xu" target="_blank"><div class="item"><i class="i-zhihu"></i></div></a><a href="https://twitter.com/Hiluluke" target="_blank"><div class="item"><i class="i-twitter"></i></div></a><a href="http://codepen.io/hiluluke" target="_blank"><div class="item"><i class="i-codepen"></i></div></a></div></aside><div class="wrap"><div class="side"><div class="top" id="back-top"></div><div class="arrows" id="nav-btn"></div></div><header class="header menu-home"><nav> <a class="menu-item-home" href="/">首页</a> <a class="menu-item-categories" href="/categories">分类</a> <a class="menu-item-tags" href="/tags">标签</a> <a class="menu-item-about" href="/about">关于</a> <a class="menu-item-rss" href="/atom.xml">RSS</a></nav></header><section id="main" class="content"><section class="archives-wrap"><div class="ct-title"><h2>Tool <small>分类</small></h2></div><div class="archives"><div class="title-wrap"><a class="post-title" href="/2016/08/19/hexo-compress/"><h1>自动化部署hexo</h1></a><div class="page-info"> <span>By <a href="/about">hiluluke</a> on</span> <time datetime="2016-08-18T16:00:00.000Z" itemprop="datePublished">Aug 19 2016</time></div></div><div class="content-wrap"><p>作为一名小前端，对于页面的优化肯定是有追求的。本文将利用gulp来压缩hexo生成的文件，并利用npm命令自动部署我们的博客。</p><h2 id="添加gulp"><a href="#添加gulp" class="headerlink" title="添加gulp"></a>添加gulp</h2><p>首先你需要全局安装gulp: <code>npm install -g gulp</code>。<br></p><div class="read-more"> <a href="/2016/08/19/hexo-compress/"><span class="i-next">阅读全文</span></a></div></div></div><div class="archives"><div class="title-wrap"><a class="post-title" href="/2015/10/20/lessNote/"><h1>less note</h1></a><div class="page-info"> <span>By <a href="/about">hiluluke</a> on</span> <time datetime="2015-10-19T16:00:00.000Z" itemprop="datePublished">Oct 20 2015</time></div></div><div class="content-wrap"><p>less比较好入门，看了2-3个小时的文档，觉得已经7788了。东西并不是很多。这个笔记比较干，比较精简，建议还是看文档好些，反正不难。</p><h3 id="less基础"><a href="#less基础" class="headerlink" title="less基础"></a>less基础</h3><ul><li>less运行<br>其可以在html中嵌入一个less.js文件或则使用node工具lessc，也可以用gulp，grunt在部署之前编译。</li></ul><p><strong>lessc</strong>：<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g lessc</div></pre></td></tr></table></figure><p></p><p>然后就可以使用命令行编译less了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lessc test.less test.css</div></pre></td></tr></table></figure><p>上面代码就会将test.less编译输出在当前目录下test.css。</p><div class="read-more"> <a href="/2015/10/20/lessNote/"><span class="i-next">阅读全文</span></a></div></div></div><div class="archives"><div class="title-wrap"><a class="post-title" href="/2015/10/14/gulp/"><h1>gulp note</h1></a><div class="page-info"> <span>By <a href="/about">hiluluke</a> on</span> <time datetime="2015-10-13T16:00:00.000Z" itemprop="datePublished">Oct 14 2015</time></div></div><div class="content-wrap"><p>前几天公司一个同事说了gulp用着太爽了，比grunt语法好很多。然后就猴急的尝试了下，并在公司之前的一个项目上做了实验。觉得有下面几点优点：</p><ul><li>更像是就是js语法，写起来很顺</li><li>代码执行顺序更清晰</li><li>代码量更少，主要是因为grunt各种大小括号换行导致其看起来很臃肿。</li><li>gulp.watch 太好用了。。</li></ul><p>当然有几点grunt也是有优点，比如本省就支持在代码上面添加banner，但是gulp需要使用插件。</p><p>最后，推荐小伙伴也尝试着去使用gulp。下面是我自己的一些笔记。</p><h3 id="gulp常用插件"><a href="#gulp常用插件" class="headerlink" title="gulp常用插件"></a>gulp常用插件</h3><ul><li>less的编译<a href="github.com/plus3network/gulp-less">gulp-less</a></li><li>自动添加css前缀<a href="http://github.com/Metrime/gulp-autoprefixer">gulp-autoprefixer</a></li><li>压缩css<a href="http://github.com/jonathanepollack/gulp-minify-css">gulp-minify-css</a></li><li>js代码校验<a href="http://github.com/spenceralger/gulp-jshint">gulp-jshint</a></li><li>给代码头部添加公司等之类的注释 <a href="https://www.npmjs.com/package/gulp-header">gulp-header</a></li><li>替换文本，用于修改版本号之类的 <a href="github.com/lazd/gulp-replace">gulp-replace</a></li><li>合并js文件<a href="http://github.com/wearefractal/gulp-concat">gulp-concat</a></li><li>压缩js代码<a href="http://github.com/terinjokes/gulp-uglify">gulp-uglify</a></li><li>压缩图片<a href="http://github.com/sindresorhus/gulp-imagemin">gulp-imagemin</a></li><li>自动刷新页面<a href="http://github.com/vohof/gulp-livereload">gulp-livereload</a></li><li>图片缓存，只有图片替换了才压缩<a href="http://github.com/jgable/gulp-cache">gulp-cache</a></li><li>更改提醒<a href="http://github.com/mikaelbr/gulp-notify">gulp-notify</a></li><li>清除文件<a href="http://www.npmjs.org/package/del">del</a></li></ul><p>安装插件和grunt一样就用npm了，不啰嗦。</p><div class="read-more"> <a href="/2015/10/14/gulp/"><span class="i-next">阅读全文</span></a></div></div></div><div class="archives"><div class="title-wrap"><a class="post-title" href="/2014/05/17/gvim-guide/"><h1>gvim使用笔记</h1></a><div class="page-info"> <span>By <a href="/about">hiluluke</a> on</span> <time datetime="2014-05-16T16:00:00.000Z" itemprop="datePublished">May 17 2014</time></div></div><div class="content-wrap"><p>之前是在windows下用的sublime text2作为的编辑器。真心是神器。但是现在转入linux它的兼容性有些差。于是就开始用emacs和gvim，受唐尼玛影响，就使用gvim。。。其实这几样东西那个好用我不想做评价，都是工具嘛。随便啦，用着顺手就成。</p><p><strong>好叻，正题步入</strong></p><p>我看的是gvim自带的介绍。配置方面的讲的应该不够深，其他都还好。</p><h2 id="第一讲"><a href="#第一讲" class="headerlink" title="第一讲"></a>第一讲</h2><ol><li>光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。<br>h (左移) j (下行) k (上行) l (右移)<div class="read-more"> <a href="/2014/05/17/gvim-guide/"><span class="i-next">阅读全文</span></a></div></li></ol></div></div><div class="archives"><div class="title-wrap"><a class="post-title" href="/2014/01/28/hello-hexo/"><h1>Hello Hexo</h1></a><div class="page-info"> <span>By <a href="/about">hiluluke</a> on</span> <time datetime="2014-01-27T16:00:00.000Z" itemprop="datePublished">Jan 28 2014</time></div></div><div class="content-wrap"><p>之前用的是<a href="http://cn.wordpress.org/">wordpress</a>,并搭建在sae里面。不过觉得一点也不好玩。具体和hexo那个好我就不比较了。其实都差不多，各有各自的优点。<br>在<a href="jianshu.io">简书</a>看到的关于在github上搭建博客的教程，了解到hexo。再然后看到jacman这个theme就被吸引了。于是从零开始搭建自己通过hexo在github搭建blog。下面把我搭建学习相关步骤罗列下。<br>我是在网上看的各种教程搭建的，所以会比较多的外链啦~</p><h2 id="熟悉github并配置"><a href="#熟悉github并配置" class="headerlink" title="熟悉github并配置"></a>熟悉github并配置</h2><h3 id="熟悉github"><a href="#熟悉github" class="headerlink" title="熟悉github"></a>熟悉github</h3><p>如果你知道如何使用github就绕过这一节吧。<br>开始我接触<a href="https://github.com/">github</a>的时候全英文，也被唬住了。其实挺简单的。你就按照注册（注册我就不介绍了）后<a href="https://help.github.com/articles/set-up-git">set-up git帮助文档</a><br></p><div class="read-more"> <a href="/2014/01/28/hello-hexo/"><span class="i-next">阅读全文</span></a></div></div></div></section></section><footer class="footer"><div>我是一个粉刷匠</div><div>由 <a href="https://hexo.io/">Hexo</a> 强力驱动 | 主题- <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div></footer></div></div><script src="/js/simple_build.js"></script><script type="text/javascript">var duoshuoQuery={short_name:"hiluluke"};!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"https:":"http:")+"//static.duoshuo.com/embed.js",t.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)}()</script><script>!function(e,t,a,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=t.createElement(a),s=t.getElementsByTagName(a)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-83014983-1","auto"),ga("send","pageview")</script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>
+    
+    分类: Tool 
+      | hilu&#39;s note 
+    
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <link rel="alternate" href="" title="hilu&#39;s note" type="application/atom+xml">
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <style>
+      /* menu nav active status */
+      
+        .menu-home .menu-item-home {
+          color: #b71c1c
+        }
+      
+        .menu-categories .menu-item-categories {
+          color: #b71c1c
+        }
+      
+        .menu-tags .menu-item-tags {
+          color: #b71c1c
+        }
+      
+        .menu-about .menu-item-about {
+          color: #b71c1c
+        }
+      
+        .menu-rss .menu-item-rss {
+          color: #b71c1c
+        }
+      
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+  <script type="text/javascript">
+    // fix sidebar flashing
+    (function(){
+      if (localStorage.getItem('sidebarState') == 'true') {
+        document.body.className="sideShow"
+      }
+    })()
+  </script>
+  <div id="container">
+    <aside class="sidebar">
+  <div class="head-icon">
+  
+    <a href="/about">
+      <img src="/avatar.jpeg">
+    </a>
+  
+  </div>
+  <div class="name">hiluluke</div>
+  <div class="desc">
+    <h4>我是一个粉刷匠</h4>  
+  </div>
+  <nav class="side-nav">
+    <div class="nav-item">
+      <a href="/">
+        <span>
+          29
+        </span>
+        <span>日志</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/categories">
+        <span>
+          7
+        </span>
+        <span>分类</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/tags">
+        <span>
+          22
+        </span>
+        <span>标签</span>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="social-wrap">
+    
+    <a href="https://github.com/wszgxa" target="_blank">
+      <div class="item">
+        <i class="i-github"></i>
+      </div>
+    </a>
+    
+    <a href="http://v2ex.com/member/hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-v2ex"></i>
+      </div>
+    </a>
+    
+    <a href="https://www.zhihu.com/people/zhao-guo-xu" target="_blank">
+      <div class="item">
+        <i class="i-zhihu"></i>
+      </div>
+    </a>
+    
+    <a href="https://twitter.com/Hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-twitter"></i>
+      </div>
+    </a>
+    
+    <a href="http://codepen.io/hiluluke" target="_blank">
+      <div class="item">
+        <i class="i-codepen"></i>
+      </div>
+    </a>
+    
+  </div>
+  
+</aside>
+    <div class="wrap">
+      <div class="side">
+  <div class="top" id="back-top"></div>
+  <div class="arrows" id="nav-btn"></div>
+</div>
+      
+<header class="header menu-home">
+  <nav>
+  
+    <a class='menu-item-home' href="/">
+    首页
+    </a>
+  
+    <a class='menu-item-categories' href="/categories">
+    分类
+    </a>
+  
+    <a class='menu-item-tags' href="/tags">
+    标签
+    </a>
+  
+    <a class='menu-item-about' href="/about">
+    关于
+    </a>
+  
+    <a class='menu-item-rss' href="/atom.xml">
+    RSS
+    </a>
+  
+  </nav> 
+</header>
+      <section id="main" class="content">
+        <section class="archives-wrap">
+  
+    <div class="ct-title">
+      <h2>Tool <small>分类</small></h2>
+    </div>
+  
+  
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2016/08/19/hexo-compress/">
+          <h1>自动化部署hexo </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">hiluluke</a> on</span>
+        
+          <time datetime="2016-08-18T16:00:00.000Z" itemprop="datePublished">Aug 19 2016</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>作为一名小前端，对于页面的优化肯定是有追求的。本文将利用gulp来压缩hexo生成的文件，并利用npm命令自动部署我们的博客。</p>
+<h2 id="添加gulp"><a href="#添加gulp" class="headerlink" title="添加gulp"></a>添加gulp</h2><p>首先你需要全局安装gulp: <code>npm install -g gulp</code>。<br>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2016/08/19/hexo-compress/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2015/10/20/lessNote/">
+          <h1>less note </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">hiluluke</a> on</span>
+        
+          <time datetime="2015-10-19T16:00:00.000Z" itemprop="datePublished">Oct 20 2015</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>less比较好入门，看了2-3个小时的文档，觉得已经7788了。东西并不是很多。这个笔记比较干，比较精简，建议还是看文档好些，反正不难。</p>
+<h3 id="less基础"><a href="#less基础" class="headerlink" title="less基础"></a>less基础</h3><ul>
+<li>less运行<br>其可以在html中嵌入一个less.js文件或则使用node工具lessc，也可以用gulp，grunt在部署之前编译。</li>
+</ul>
+<p><strong>lessc</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g lessc</div></pre></td></tr></table></figure></p>
+<p>然后就可以使用命令行编译less了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lessc test.less test.css</div></pre></td></tr></table></figure>
+<p>上面代码就会将test.less编译输出在当前目录下test.css。</p>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2015/10/20/lessNote/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2015/10/14/gulp/">
+          <h1>gulp note </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">hiluluke</a> on</span>
+        
+          <time datetime="2015-10-13T16:00:00.000Z" itemprop="datePublished">Oct 14 2015</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>前几天公司一个同事说了gulp用着太爽了，比grunt语法好很多。然后就猴急的尝试了下，并在公司之前的一个项目上做了实验。觉得有下面几点优点：</p>
+<ul>
+<li>更像是就是js语法，写起来很顺</li>
+<li>代码执行顺序更清晰</li>
+<li>代码量更少，主要是因为grunt各种大小括号换行导致其看起来很臃肿。</li>
+<li>gulp.watch 太好用了。。</li>
+</ul>
+<p>当然有几点grunt也是有优点，比如本省就支持在代码上面添加banner，但是gulp需要使用插件。</p>
+<p>最后，推荐小伙伴也尝试着去使用gulp。下面是我自己的一些笔记。</p>
+<h3 id="gulp常用插件"><a href="#gulp常用插件" class="headerlink" title="gulp常用插件"></a>gulp常用插件</h3><ul>
+<li>less的编译<a href="github.com/plus3network/gulp-less">gulp-less</a></li>
+<li>自动添加css前缀<a href="http://github.com/Metrime/gulp-autoprefixer">gulp-autoprefixer</a></li>
+<li>压缩css<a href="http://github.com/jonathanepollack/gulp-minify-css">gulp-minify-css</a></li>
+<li>js代码校验<a href="http://github.com/spenceralger/gulp-jshint">gulp-jshint</a></li>
+<li>给代码头部添加公司等之类的注释 <a href="https://www.npmjs.com/package/gulp-header">gulp-header</a></li>
+<li>替换文本，用于修改版本号之类的 <a href="github.com/lazd/gulp-replace">gulp-replace</a></li>
+<li>合并js文件<a href="http://github.com/wearefractal/gulp-concat">gulp-concat</a></li>
+<li>压缩js代码<a href="http://github.com/terinjokes/gulp-uglify">gulp-uglify</a></li>
+<li>压缩图片<a href="http://github.com/sindresorhus/gulp-imagemin">gulp-imagemin</a></li>
+<li>自动刷新页面<a href="http://github.com/vohof/gulp-livereload">gulp-livereload</a></li>
+<li>图片缓存，只有图片替换了才压缩<a href="http://github.com/jgable/gulp-cache">gulp-cache</a></li>
+<li>更改提醒<a href="http://github.com/mikaelbr/gulp-notify">gulp-notify</a></li>
+<li>清除文件<a href="http://www.npmjs.org/package/del">del</a></li>
+</ul>
+<p>安装插件和grunt一样就用npm了，不啰嗦。</p>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2015/10/14/gulp/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2014/05/17/gvim-guide/">
+          <h1>gvim使用笔记 </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">hiluluke</a> on</span>
+        
+          <time datetime="2014-05-16T16:00:00.000Z" itemprop="datePublished">May 17 2014</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>之前是在windows下用的sublime text2作为的编辑器。真心是神器。但是现在转入linux它的兼容性有些差。于是就开始用emacs和gvim，受唐尼玛影响，就使用gvim。。。其实这几样东西那个好用我不想做评价，都是工具嘛。随便啦，用着顺手就成。</p>
+<p><strong>好叻，正题步入</strong></p>
+<p>我看的是gvim自带的介绍。配置方面的讲的应该不够深，其他都还好。</p>
+<h2 id="第一讲"><a href="#第一讲" class="headerlink" title="第一讲"></a>第一讲</h2><ol>
+<li>光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。<br>h (左移) j (下行) k (上行) l (右移)
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2014/05/17/gvim-guide/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2014/01/28/hello-hexo/">
+          <h1>Hello Hexo </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">hiluluke</a> on</span>
+        
+          <time datetime="2014-01-27T16:00:00.000Z" itemprop="datePublished">Jan 28 2014</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>之前用的是<a href="http://cn.wordpress.org/">wordpress</a>,并搭建在sae里面。不过觉得一点也不好玩。具体和hexo那个好我就不比较了。其实都差不多，各有各自的优点。<br>在<a href="jianshu.io">简书</a>看到的关于在github上搭建博客的教程，了解到hexo。再然后看到jacman这个theme就被吸引了。于是从零开始搭建自己通过hexo在github搭建blog。下面把我搭建学习相关步骤罗列下。<br>我是在网上看的各种教程搭建的，所以会比较多的外链啦~</p>
+<h2 id="熟悉github并配置"><a href="#熟悉github并配置" class="headerlink" title="熟悉github并配置"></a>熟悉github并配置</h2><h3 id="熟悉github"><a href="#熟悉github" class="headerlink" title="熟悉github"></a>熟悉github</h3><p>如果你知道如何使用github就绕过这一节吧。<br>开始我接触<a href="https://github.com/">github</a>的时候全英文，也被唬住了。其实挺简单的。你就按照注册（注册我就不介绍了）后<a href="https://help.github.com/articles/set-up-git">set-up git帮助文档</a><br>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2014/01/28/hello-hexo/"><span class='i-next'>阅读全文</span></a>
+      </div>
+    </div>
+  
+  
+</section>
+      </section>
+    <footer class="footer">
+  <div>我是一个粉刷匠</div>
+  <div>由 <a href="https://hexo.io/">Hexo</a> 强力驱动 | 主题- <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
+</footer>
+    </div>
+  </div>
+  <script src="/js/simple_build.js"></script>
+  
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"hiluluke"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+
+
+				
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-83014983-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
