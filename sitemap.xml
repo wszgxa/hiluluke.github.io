@@ -4,7 +4,7 @@
   <url>
     <loc>http://hiluluke.cn/2016/08/25/vue-control/</loc>
     
-    <lastmod>2016-08-25T04:03:49.000Z</lastmod>
+    <lastmod>2016-08-25T04:06:27.000Z</lastmod>
     
   </url>
   
@@ -156,28 +156,14 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/10/25/canvasNote1/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/10/14/js-inherit/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/10/20/lessNote/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://hiluluke.cn/2014/05/14/ubuntu-lamp/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/02/21/jsselfdo/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
@@ -191,21 +177,7 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2014/05/17/gvim-guide/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2014/04/28/sublime/</loc>
+    <loc>http://hiluluke.cn/2015/10/14/js-inherit/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
@@ -219,7 +191,35 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/02/21/jsselfdo/</loc>
+    <loc>http://hiluluke.cn/2014/04/28/sublime/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2014/05/17/gvim-guide/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/25/canvasNote1/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/20/lessNote/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
