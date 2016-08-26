@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hiluluke.cn/"/>
-  <updated>2016-08-25T04:06:27.000Z</updated>
+  <updated>2016-08-25T04:18:57.000Z</updated>
   <id>http://hiluluke.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://hiluluke.cn/2016/08/25/vue-control/"/>
     <id>http://hiluluke.cn/2016/08/25/vue-control/</id>
     <published>2016-08-24T16:00:00.000Z</published>
-    <updated>2016-08-25T04:06:27.000Z</updated>
+    <updated>2016-08-25T04:18:57.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>本文所涉及代码全在<a href="https://github.com/wszgxa/vue-cnode" target="_blank" rel="external">vue-cnode</a></p>
@@ -31,7 +31,7 @@
 <p>本文就是介绍如何通过vuex对全局组件和功能组件进行控制的。</p>
 <a id="more"></a>
 <h2 id="使用vuex传递逻辑数据"><a href="#使用vuex传递逻辑数据" class="headerlink" title="使用vuex传递逻辑数据"></a>使用vuex传递逻辑数据</h2><p>说是控制，其实就是组件间交互，vue中组件交互有很多方式，我们这里用vuex。</p>
-<p>我们将单独建立一个module(doc_state)，用来做功能组件和全局组件的功能交互，在module中我们将建立功能组件或则全局组件需要的数据，和函数方法等。如下图所示：</p>
+<p>我们将单独建立一个module(doc_state)，用来做功能组件和全局组件的功能交互，在module中我们将初始化功能组件或则全局组件需要的数据和函数方法等。如下图所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// doc state 需要一些变量来记录文档状态</div><div class="line">import &#123;</div><div class="line">  SET_TIP</div><div class="line">&#125; from &apos;../mutation_types&apos;</div><div class="line">const state = &#123;</div><div class="line">  tip: &#123;</div><div class="line">    text: &apos;&apos;,</div><div class="line">    time: 2000,</div><div class="line">    callback: null</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">const mutations = &#123;</div><div class="line">  [SET_TIP] (state, tip) &#123;</div><div class="line">    state.tip = tip</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">export default &#123;</div><div class="line">  state,</div><div class="line">  mutations</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这里我们以tip（提示）组件为例子讲解，所有doc modules在<code>/src/vuex/modules/doc_state</code>。</p>
 <p>然后我们定义doc_actions定义我们的action:</p>
@@ -92,7 +92,7 @@
     <link href="http://hiluluke.cn/2016/08/21/Performance-1/"/>
     <id>http://hiluluke.cn/2016/08/21/Performance-1/</id>
     <published>2016-08-20T16:00:00.000Z</published>
-    <updated>2016-08-25T04:00:15.000Z</updated>
+    <updated>2016-08-25T08:03:59.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>嗯，搞点大事情</p>
@@ -124,7 +124,7 @@
 <blockquote>
 <p>未完待续</p>
 </blockquote>
-<!--
+<h2 id="域名分区"><a href="#域名分区" class="headerlink" title="域名分区"></a>域名分区</h2><!--
 ## 减少重定向
 
 ## 使用CDN
@@ -135,7 +135,6 @@
 
 ## 并行处理请求
 
-## 域名分区，利用浏览器可以同时处理6个链接的能力
 
 ## 客户端缓存资源
 -->]]></content>
@@ -335,7 +334,7 @@
     <link href="http://hiluluke.cn/2016/08/04/vue-spa/"/>
     <id>http://hiluluke.cn/2016/08/04/vue-spa/</id>
     <published>2016-08-03T16:00:00.000Z</published>
-    <updated>2016-08-11T13:27:22.000Z</updated>
+    <updated>2016-08-25T04:10:27.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>本文所涉及代码全在<a href="https://github.com/wszgxa/vue-cnode" target="_blank" rel="external">vue-cnode</a></p>
@@ -365,7 +364,7 @@
 <p>另外由于APP.vue在所有页面都有，我们将会在APP.vue上面写一些初始化全局方法。</p>
 <h3 id="router"><a href="#router" class="headerlink" title="router"></a>router</h3><p>router 是具体的业务组件，比如index,login,content等组件都是具体业务相关的。下面就是再和业务相关的组件。</p>
 <h3 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h3><p>全局组件是页面共用的部分，比如header，footer，navbar，你可能在想如果我有一些header是独特的怎么办，这种情况下可以通过路由做判断，渲染不同的html，如果判断条件不是路由，也可以在vuex写一个store记录组件的state。</p>
-<h3 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h3><p>功能组件是比如dialog,tip等组件，使用来与用户交互的。</p>
+<h3 id="功能组件"><a href="#功能组件" class="headerlink" title="功能组件"></a>功能组件</h3><p>功能组件是比如dialog,tip等组件，是用来与用户交互的。</p>
 <p>通常情况下，功能组件是各个组件都需要的一些组件。在一个页面里如果有两个组件，两个组件都同时引了一个tip组件作为子组件是纯在的。为了避免这种情况，我们将功能组件提到App.vue然后通过vuex进行组件交互，从而就讲一个功能组件变成了全局方法。</p>
 <h3 id="自定义插件"><a href="#自定义插件" class="headerlink" title="自定义插件"></a>自定义插件</h3><p>vue还能自己写插件。对于一些公用的方法和逻辑，我们可以提出来写在插件里面。</p>
 <h2 id="小节"><a href="#小节" class="headerlink" title="小节"></a>小节</h2><p>可以看到，我们项目整体结构非常清晰。入口加载初始化，主组件挂载路由全局控制，然后全局组件功能组件借助vuex进行数据控制。</p>
@@ -1500,9 +1499,9 @@
     
       <category term="前端" scheme="http://hiluluke.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
-    
       <category term="HTML5" scheme="http://hiluluke.cn/tags/HTML5/"/>
+    
+      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
     
       <category term="设计" scheme="http://hiluluke.cn/tags/%E8%AE%BE%E8%AE%A1/"/>
     
@@ -1592,9 +1591,9 @@
     
       <category term="前端" scheme="http://hiluluke.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
-    
       <category term="HTML5" scheme="http://hiluluke.cn/tags/HTML5/"/>
+    
+      <category term="翻译" scheme="http://hiluluke.cn/tags/%E7%BF%BB%E8%AF%91/"/>
     
       <category term="设计" scheme="http://hiluluke.cn/tags/%E8%AE%BE%E8%AE%A1/"/>
     
