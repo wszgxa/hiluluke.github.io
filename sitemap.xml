@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hiluluke.cn/2016/08/29/strict/</loc>
+    
+    <lastmod>2016-08-29T02:03:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hiluluke.cn/2016/08/21/Performance-1/</loc>
     
     <lastmod>2016-08-25T08:03:59.000Z</lastmod>
@@ -156,14 +163,14 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
+    <loc>http://hiluluke.cn/2014/05/14/ubuntu-lamp/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2014/05/17/gvim-guide/</loc>
+    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
@@ -177,35 +184,7 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/10/20/lessNote/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/10/25/canvasNote1/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2014/05/14/ubuntu-lamp/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2014/01/28/hello-hexo/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/10/10/js-object/</loc>
+    <loc>http://hiluluke.cn/2014/05/17/gvim-guide/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
@@ -219,7 +198,35 @@
   </url>
   
   <url>
+    <loc>http://hiluluke.cn/2014/01/28/hello-hexo/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/20/lessNote/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hiluluke.cn/2015/02/21/jsselfdo/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/25/canvasNote1/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/10/js-object/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
