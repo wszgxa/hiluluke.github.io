@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hiluluke.cn/2018/10/08/FP-with-JS-concept/</loc>
+    
+    <lastmod>2018-10-09T16:29:34.031Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/20/lessNote/</loc>
+    
+    <lastmod>2018-10-09T16:23:56.613Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hiluluke.cn/2018/08/29/facc-hoc/</loc>
     
-    <lastmod>2018-09-02T07:18:28.509Z</lastmod>
+    <lastmod>2018-09-04T12:32:58.638Z</lastmod>
     
   </url>
   
@@ -198,28 +212,7 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/02/21/jsselfdo/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/10/10/js-object/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2014/04/28/sublime/</loc>
+    <loc>http://hiluluke.cn/2015/10/14/js-inherit/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
@@ -240,14 +233,21 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/10/14/js-inherit/</loc>
+    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/10/20/lessNote/</loc>
+    <loc>http://hiluluke.cn/2014/04/28/sublime/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/02/21/jsselfdo/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
@@ -255,6 +255,13 @@
   
   <url>
     <loc>http://hiluluke.cn/2015/10/25/canvasNote1/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/10/js-object/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
