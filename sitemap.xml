@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hiluluke.cn/2018/10/13/FP-with-JS-functor/</loc>
+    
+    <lastmod>2018-12-17T10:55:13.078Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hiluluke.cn/2018/10/11/FP-with-JS-compose/</loc>
     
-    <lastmod>2018-10-13T06:04:32.881Z</lastmod>
+    <lastmod>2018-10-23T08:06:02.511Z</lastmod>
     
   </url>
   
@@ -219,28 +226,7 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2014/05/17/gvim-guide/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/10/14/js-inherit/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2014/04/28/sublime/</loc>
-    
-    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
+    <loc>http://hiluluke.cn/2015/10/10/js-object/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
@@ -254,7 +240,28 @@
   </url>
   
   <url>
-    <loc>http://hiluluke.cn/2015/10/10/js-object/</loc>
+    <loc>http://hiluluke.cn/2014/04/28/sublime/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2014/05/17/gvim-guide/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/02/02/nodejs/</loc>
+    
+    <lastmod>2015-12-13T15:16:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hiluluke.cn/2015/10/14/js-inherit/</loc>
     
     <lastmod>2015-12-13T15:16:48.000Z</lastmod>
     
